@@ -54,13 +54,13 @@ export default function Landing() {
   const features = [
     {
       icon: Sparkles,
-      title: "AI-Assisted Drafting",
-      description: "Intelligent document generation with AI-powered suggestions and compliance checks"
+      title: "AI-Assisted Drafting and Smart Analytics",
+      description: "Intelligent document work flow with AI-powered suggestions; track document status, edits, and legal insights"
     },
     {
       icon: Shield,
-      title: "Secure & Compliant",
-      description: "Bank-level encryption with cryptographically verified signatures"
+      title: "Proven NDAs, Transaction Based Professional Agreements",
+      description: "Backed by 20 years and over $5b of transactions; leveraging databases with thousands of precedents"
     },
     {
       icon: Zap,
@@ -69,18 +69,18 @@ export default function Landing() {
     },
     {
       icon: Users,
-      title: "Collaborative",
+      title: "Collaborative, For Business Users or Lawyers",
       description: "Real-time collaboration with counterparties and team members"
     },
     {
       icon: Lock,
-      title: "Tamper-Proof",
-      description: "Blockchain-inspired signature verification ensures document integrity"
+      title: "Tamper-Proof, Secure and Compliant",
+      description: "Content and signature verification with cryptographic encryption ensures document integrity"
     },
     {
       icon: TrendingUp,
-      title: "Smart Analytics",
-      description: "Track document status, engagement, and relationship insights"
+      title: "How It Should Be",
+      description: "Consolidate Outlook, Word, Adobe, Docusign, Dropbox, and free up your lawyer to higher value tasks"
     }
   ];
 
@@ -94,7 +94,7 @@ export default function Landing() {
         "2 NDAs per month or 10 total",
         "Use our standardized or your own NDA",
         "Storage and document management",
-        "Receive additional capacity for referrals",
+        "Receive additional free usage for referrals",
         "Automated work flows and notifications"
       ],
       cta: "Start Free",
@@ -238,8 +238,8 @@ export default function Landing() {
                 ... with or without a lawyer
               </p>
               <p className="text-lg text-blue-50 mb-8 leading-relaxed">
-                Consolidate your legal workflow into one AI-powered platform. High value, low cost,
-                efficient document management that simplifies the entire legal process.
+                Consolidate your NDA and legal workflow into one AI-powered platform. High value, low cost,
+                efficient document management that simplifies the entire legal process. Proven transaction based professional agreements leveraging two decades of institutional scale deals.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <div className="relative flex-1 max-w-md">
@@ -266,7 +266,7 @@ export default function Landing() {
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-[#FF6B35]" />
-                  <span>2 free NDAs/month</span>
+                  <span>Start with 2 free NDAs/month</span>
                 </div>
               </div>
             </div>
@@ -408,7 +408,7 @@ export default function Landing() {
             </p>
             <div className="max-w-3xl mx-auto mt-6 p-6 bg-blue-50 border border-blue-200 rounded-xl">
               <p className="text-lg text-blue-900 font-semibold mb-2">
-                💰 Traditional NDAs cost $500-$5,000+ per agreement
+                💰 Traditional NDAs cost hundreds per agreement
               </p>
               <p className="text-sm text-blue-700">
                 Between attorney fees for drafting, review, negotiations, and execution, most businesses spend hundreds to thousands of dollars per NDA through traditional legal channels. eNDA automates this entire process at a fraction of the cost.
