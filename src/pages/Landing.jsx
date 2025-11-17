@@ -33,24 +33,6 @@ export default function Landing() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState(null);
 
-  // useEffect(() => {
-  //   const checkAuth = async () => {
-  //     try {
-  //       const authenticated = await base44.auth.isAuthenticated();
-  //       setIsLoggedIn(authenticated);
-  //       if (authenticated) {
-  //         const userData = await base44.auth.me();
-  //         setUser(userData);
-  //       }
-  //     } catch (error) {
-  //       console.error("Authentication check failed:", error);
-  //       setIsLoggedIn(false);
-  //       setUser(null);
-  //     }
-  //   };
-  //   checkAuth();
-  // }, []);
-
   const features = [
     {
       icon: Sparkles,
