@@ -393,7 +393,7 @@ export default function Landing() {
                 💰 Traditional NDAs cost hundreds per agreement
               </p>
               <p className="text-sm text-blue-700">
-                Between attorney fees for drafting, review, negotiations, and execution, most businesses spend hundreds to thousands of dollars per NDA through traditional legal channels. eNDA automates this entire process at a fraction of the cost.
+                Between attorney fees for drafting, review, negotiations, and execution, most businesses spend hundreds to thousands of dollars on NDAs through traditional legal channels utilizing a cumbersome process requiring several applications. eNDA automates this entire process at a fraction of the time and cost with a simple subcription model rather than a per hour or per document cost.
               </p>
             </div>
           </div>
@@ -536,7 +536,7 @@ export default function Landing() {
                 Choose a Template
               </h3>
               <p className="text-slate-600">
-                Select from our library of pre-built legal templates or upload your own. AI helps customize it to your needs.
+                Select from our library of pre-built legal templates or upload your own using AI to quickly standardize it to our legal flow, enrich your data and customize it to your needs.
               </p>
             </div>
             <div className="text-center">
@@ -605,7 +605,7 @@ export default function Landing() {
               More legal agreements on the way
             </h2>
             <p className="text-slate-600">
-              We're constantly expanding our template library to cover all your legal needs—helping your teams use a standardized baseline and stay productive
+              We're constantly expanding our template library to cover your higher frequency legal needs — helping your teams use a standardized baseline and stay productive
             </p>
           </div>
           <div className="grid md:grid-cols-4 gap-6 max-w-4xl mx-auto">
