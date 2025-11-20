@@ -144,21 +144,6 @@ export default function Landing() {
     }
   ];
 
-  // const handleGetStarted = () => {
-  //   if (isLoggedIn) {
-  //     navigate(createPageUrl("Dashboard"));
-  //   } else {
-  //     navigate(createPageUrl("Dashboard")); // This will redirect to login if not authenticated
-  //   }
-  // };
-
-  // const handleLoginClick = () => {
-  //   if (isLoggedIn) {
-  //     navigate(createPageUrl("Dashboard"));
-  //   } else {
-  //     base44.auth.redirectToLogin();
-  //   }
-  // };
 
   return (
     <div className="min-h-screen bg-white">
@@ -189,7 +174,7 @@ export default function Landing() {
             <div className="flex items-center gap-3">
                   <Button
                     variant="ghost"
-                    onClick={() => navigate(createPageUrl("Dashboard"))}
+                    onClick={() => window.location.href = "https://enda.legal-flow.app/dashboard"}
                     className="text-slate-700"
                   >
                     Go to Dashboard
