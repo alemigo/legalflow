@@ -2,7 +2,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { createPageUrl } from "@/utils";
-// import { base44 } from "@/api/base44Client";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -168,11 +167,13 @@ export default function Landing() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center gap-2">
+
+              <a href="#" className="text-slate-700 hover:text-slate-900 font-medium transition-colors">
               <img
-                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6904bfd2b3cbee331d007f27/3c0ad16c5_Logo2.JPG"
+                src="endalogo.jpg"
                 alt="eNDA Logo"
                 className="h-10 w-auto"
-              />
+              /></a>
             </div>
             <nav className="hidden md:flex items-center gap-8">
               <a href="#how-it-works" className="text-slate-700 hover:text-slate-900 font-medium transition-colors">
@@ -403,18 +404,7 @@ export default function Landing() {
             {/* GIF/Video Placeholder - For Future Upload */}
             <Card className="p-8 md:p-12 bg-gradient-to-br from-red-50 to-orange-50 border-2 border-red-200 shadow-2xl">
               <div className="relative bg-white rounded-lg shadow-lg overflow-hidden" style={{ minHeight: '400px' }}>
-                {/* Replace this div with your animated GIF or video */}
-                <div className="absolute inset-0 flex items-center justify-center bg-black/20 hover:bg-black/30 transition-all duration-300 group">
-                  <div className="text-center">
-                    <PlayCircle className="w-20 h-20 text-white mb-4 mx-auto group-hover:scale-110 transition-transform duration-300" />
-                    <p className="text-white text-lg font-medium bg-black/50 px-6 py-3 rounded-lg">
-                      Upload your animated GIF or video here
-                    </p>
-                    <p className="text-white/80 text-sm mt-2">
-                      (Showing the chaotic old process with multiple tools)
-                    </p>
-                  </div>
-                </div>
+              <img src="workflow.gif" alt="Workfow" className="w-full h-full object-cover" />
               </div>
               
               <div className="mt-8 flex flex-wrap gap-4 justify-center">
@@ -877,9 +867,9 @@ export default function Landing() {
           <div className="grid md:grid-cols-4 gap-12 mb-12">
             <div>
               <img
-                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6904bfd2b3cbee331d007f27/3c0ad16c5_Logo2.JPG"
+                src="endalogo.jpg"
                 alt="eNDA Logo"
-                className="h-10 w-auto mb-4 brightness-0 invert"
+                className="h-10 w-auto"
               />
               <p className="text-slate-400 text-sm">
                 Revolutionizing legal agreements with AI-powered technology.
@@ -888,9 +878,8 @@ export default function Landing() {
             <div>
               <h4 className="font-semibold mb-4">Product</h4>
               <ul className="space-y-2 text-sm text-slate-400">
-                <li><a href="#features" className="hover:text-white transition-colors">Features</a></li>
-                <li><a href="#pricing" className="hover:text-white transition-colors">Pricing</a></li>
                 <li><a href="#how-it-works" className="hover:text-white transition-colors">How it Works</a></li>
+                <li><a href="#pricing" className="hover:text-white transition-colors">Pricing</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Security</a></li>
               </ul>
             </div>
