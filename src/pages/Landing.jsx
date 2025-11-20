@@ -691,6 +691,8 @@ export default function Landing() {
               <Card
                 key={index}
                 className={`relative border-2 ${
+                  tier.hasSpecialOffer ? 'z-30' : 'z-0'} 
+                  ${
                   tier.popular
                     ? 'border-blue-600 shadow-xl scale-105'
                     : 'border-slate-200 shadow-sm'
@@ -725,9 +727,9 @@ export default function Landing() {
                           <div className="text-[#0055A5] text-[6.5px] font-bold uppercase tracking-tight leading-[1.2]">
                             Customers
                           </div>
-                          <div className="text-[#0055A5] text-[6.5px] font-bold uppercase tracking-tight leading-[1.2]">
+                          {/* <div className="text-[#0055A5] text-[6.5px] font-bold uppercase tracking-tight leading-[1.2]">
                             That Claim It
-                          </div>
+                          </div> */}
                         </div>
                       </div>
                       <div className="absolute -inset-1 bg-gradient-to-br from-[#003B73] to-[#0055A5] rounded-full blur-md opacity-30"></div>
