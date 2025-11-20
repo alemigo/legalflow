@@ -144,7 +144,6 @@ export default function Landing() {
     }
   ];
 
-
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
@@ -171,13 +170,13 @@ export default function Landing() {
                 Contact
               </a>
             </nav>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 rounded">
                   <Button
                     variant="ghost"
-                    onClick={() => window.location.href = "https://enda.legal-flow.app/dashboard"}
-                    className="text-slate-700"
+                    onClick={() => window.location.href = "https://enda.legal-flow.app/dashboard?email=" + encodeURIComponent(email)}
+                    className="text-slate-700 hover:text-slate-900 font-medium transition-colors"
                   >
-                    Go to Dashboard
+                    Dashboard
                   </Button>
             </div>
           </div>
@@ -216,6 +215,7 @@ export default function Landing() {
                 </div>
                 <Button
                   className="bg-[#FF6B35] hover:bg-[#FF5722] text-white h-12 px-8 rounded-full font-semibold"
+                  onClick={() => window.location.href = "https://enda.legal-flow.app/dashboard?email=" + encodeURIComponent(email)}
                 >
                   Get started for free
                   <ArrowRight className="w-4 h-4 ml-2" />
@@ -302,7 +302,7 @@ export default function Landing() {
       </section>
 
       {/* Trust Indicators */}
-      <section className="py-12 bg-slate-50 border-y border-slate-200">
+      <section className="py-12 bg-white border-y border-slate-200">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 text-center">
             <div>
@@ -322,7 +322,7 @@ export default function Landing() {
       </section>
 
       {/* How It Works */}
-      <section id="how-it-works" className="relative overflow-hidden bg-gradient-to-br from-[#003B73] via-[#0055A5] to-[#003B73]">
+      <section id="how-it-works" className="relative overflow-hidden bg-gradient-to-b from-gray-50 to-white ">
 
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
@@ -335,26 +335,27 @@ export default function Landing() {
           <div 
             className="text-center max-w-4xl mx-auto animate-in fade-in slide-in-from-bottom-4 duration-1000"
           >
-            <div className="inline-block mb-6 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
-              <span className="text-white/90 text-sm font-medium tracking-wide">
+            <div className="inline-block mb-6 px-4 py-2 text-[#003366] bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
+              <span className="text-sm font-medium tracking-wide">
                 THE FUTURE OF NDA MANAGEMENT
               </span>
             </div>
             
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight">
-              Struggling with slow,<br />costly NDA processes?
+            <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
+              Struggling with slow,<br />costly NDAs?
             </h1>
             
-            <p className="text-xl md:text-2xl text-white/90 mb-12 leading-relaxed font-light">
+            <p className="text-xl md:text-2xl text-[#003366] mb-12 leading-relaxed font-light">
               Drafts in Word. Edits piling up. Emails flying back and forth. Signatures in DocuSign. 
               Conversions to PDF. Redlines against which version?
             </p>
 
             <Button 
               size="lg" 
-              className="bg-white text-[#003366] hover:bg-white/90 px-8 py-6 text-lg font-semibold rounded-full shadow-2xl hover:shadow-white/20 hover:scale-105 transition-all duration-300"
+              className="bg-[#003366]  text-white hover:bg-white/90 hover:text-[#003366] px-8 py-6 text-lg font-semibold rounded-full shadow-2xl hover:shadow-white/20 hover:scale-105 transition-all duration-300"
             >
-              See How eNDA Solves This
+            <a href="#problem-summary">
+              See How eNDA Solves This</a>
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
           </div>
@@ -364,7 +365,7 @@ export default function Landing() {
       </section>
 
       {/* Problem Section - Complex Workflow */}
-      <section className="py-20 md:py-32 bg-white">
+      <section id="problem-summary" className="py-20 md:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div 
             id="problem"
@@ -502,7 +503,7 @@ export default function Landing() {
       </section>
 
       {/* Features Grid */}
-      <section className="py-20 md:py-32 bg-gradient-to-b from-gray-50 to-white">
+      <section id="features-summary" className="py-20 md:py-32 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-6">
           <div 
             id="features"
@@ -764,6 +765,7 @@ export default function Landing() {
                   </ul>
                   <Button
                     disabled={tier.isComingSoon}
+                    onClick={() => window.location.href = "https://enda.legal-flow.app/dashboard?email=" + encodeURIComponent(email) + "&plan=" + encodeURIComponent(tier.name)}
                     className={`w-full h-12 ${
                       tier.popular
                         ? 'bg-blue-600 hover:bg-blue-700 text-white'
@@ -783,7 +785,8 @@ export default function Landing() {
               Need more? We offer custom enterprise solutions.
             </p>
             <Button variant="outline" className="border-slate-300">
-              Contact Sales
+
+            <a href="mailto:sales@legal-flow.app">Contact Sales</a>
             </Button>
           </div>
         </div>
@@ -801,16 +804,17 @@ export default function Landing() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               className="bg-[#FF6B35] hover:bg-[#FF5722] text-white h-14 px-8 text-lg rounded-full font-semibold"
+              onClick={() => window.location.href = "https://enda.legal-flow.app/dashboard?email=" + encodeURIComponent(email)}
             >
               Start free trial
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
-            <Button
+            {/* <Button
               variant="outline"
               className="h-14 px-8 text-lg rounded-full border-2 border-white text-white hover:bg-white hover:text-blue-600"
             >
               Schedule demo
-            </Button>
+            </Button> */}
           </div>
           <p className="text-sm text-blue-100 mt-6">
             No credit card required • 2 free NDAs/month • Cancel anytime
@@ -884,7 +888,7 @@ export default function Landing() {
               <ul className="space-y-2 text-sm text-slate-400">
                 <li className="flex items-center gap-2">
                   <Mail className="w-4 h-4" />
-                  <a href="mailto:hello@legal-flow.app" className="hover:text-white transition-colors">hello@legal-flow.app</a>
+                  <a href="mailto:support@legal-flow.app" className="hover:text-white transition-colors">support@legal-flow.app</a>
                 </li>
                 {/* <li className="flex items-center gap-2">
                   <Phone className="w-4 h-4" />
