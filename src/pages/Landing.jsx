@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { createPageUrl } from "@/utils";
 // import { base44 } from "@/api/base44Client";
@@ -12,6 +12,7 @@ import {
   Shield,
   Zap,
   Users,
+  CheckCircle,
   CheckCircle2,
   ArrowRight,
   Sparkles,
@@ -22,9 +23,11 @@ import {
   MessageSquare,
   Mail,
   Phone,
+  PlayCircle,
   Linkedin,
   Twitter,
-  PenTool // Added PenTool icon
+  PenTool, // Added PenTool icon
+  User
 } from "lucide-react";
 
 export default function Landing() {
@@ -32,6 +35,28 @@ export default function Landing() {
   const [email, setEmail] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState(null);
+
+  const [isVisible, setIsVisible] = useState({});
+  const observerRef = useRef(null);
+
+  useEffect(() => {
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(prev => ({ ...prev, [entry.target.id]: true }));
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    document.querySelectorAll('[data-animate]').forEach((el) => {
+      observerRef.current.observe(el);
+    });
+
+    return () => observerRef.current?.disconnect();
+  }, []);
 
   const features = [
     {
@@ -150,22 +175,17 @@ export default function Landing() {
               />
             </div>
             <nav className="hidden md:flex items-center gap-8">
-              <a href="#features" className="text-slate-700 hover:text-slate-900 font-medium transition-colors">
-                Features
+              <a href="#how-it-works" className="text-slate-700 hover:text-slate-900 font-medium transition-colors">
+                How it Works
               </a>
               <a href="#pricing" className="text-slate-700 hover:text-slate-900 font-medium transition-colors">
                 Pricing
-              </a>
-              <a href="#how-it-works" className="text-slate-700 hover:text-slate-900 font-medium transition-colors">
-                How it Works
               </a>
               <a href="#contact" className="text-slate-700 hover:text-slate-900 font-medium transition-colors">
                 Contact
               </a>
             </nav>
             <div className="flex items-center gap-3">
-              {isLoggedIn ? (
-                <>
                   <Button
                     variant="ghost"
                     onClick={() => navigate(createPageUrl("Dashboard"))}
@@ -173,32 +193,6 @@ export default function Landing() {
                   >
                     Go to Dashboard
                   </Button>
-                  <div className="flex items-center gap-2 px-3 py-1.5 bg-slate-100 rounded-full">
-                    <div className="w-7 h-7 bg-slate-900 rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs font-semibold">
-                        {user?.full_name?.charAt(0) || user?.email?.charAt(0).toUpperCase()}
-                      </span>
-                    </div>
-                    <span className="text-sm font-medium text-slate-700">
-                      {user?.full_name || user?.email}
-                    </span>
-                  </div>
-                </>
-              ) : (
-                <>
-                  <Button
-                    variant="ghost"
-                    className="text-slate-700"
-                  >
-                    Log in
-                  </Button>
-                  <Button
-                    className="bg-[#FF6B35] hover:bg-[#FF5722] text-white rounded-full px-6"
-                  >
-                    Get started
-                  </Button>
-                </>
-              )}
             </div>
           </div>
         </div>
@@ -340,6 +334,311 @@ export default function Landing() {
           </div>
         </div>
       </section>
+
+      {/* How It Works */}
+      <section id="how-it-works" className="relative overflow-hidden bg-gradient-to-br from-[#003B73] via-[#0055A5] to-[#003B73]">
+
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{
+            backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
+            backgroundSize: '40px 40px'
+          }} />
+        </div>
+        
+        <div className="relative max-w-7xl mx-auto px-6 py-20 md:py-32">
+          <div 
+            className="text-center max-w-4xl mx-auto animate-in fade-in slide-in-from-bottom-4 duration-1000"
+          >
+            <div className="inline-block mb-6 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
+              <span className="text-white/90 text-sm font-medium tracking-wide">
+                THE FUTURE OF NDA MANAGEMENT
+              </span>
+            </div>
+            
+            <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight">
+              Struggling with slow,<br />costly NDA processes?
+            </h1>
+            
+            <p className="text-xl md:text-2xl text-white/90 mb-12 leading-relaxed font-light">
+              Drafts in Word. Edits piling up. Emails flying back and forth. Signatures in DocuSign. 
+              Conversions to PDF. Redlines against which version?
+            </p>
+
+            <Button 
+              size="lg" 
+              className="bg-white text-[#003366] hover:bg-white/90 px-8 py-6 text-lg font-semibold rounded-full shadow-2xl hover:shadow-white/20 hover:scale-105 transition-all duration-300"
+            >
+              See How eNDA Solves This
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
+          </div>
+        </div>
+
+        {/* <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent" /> */}
+      </section>
+
+      {/* Problem Section - Complex Workflow */}
+      <section className="py-20 md:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div 
+            id="problem"
+            data-animate
+            className={`transition-all duration-1000 ${
+              isVisible.problem ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}
+          >
+            <div className="text-center mb-16">
+              <span className="inline-block px-4 py-2 bg-red-50 text-red-600 rounded-full text-sm font-semibold mb-6">
+                THE OLD WAY
+              </span>
+              <h2 className="text-4xl md:text-5xl font-bold text-[#003366] mb-6">
+                The Cumbersome Reality
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                Final executed docs buried in Dropbox, if they were saved. On top of the multiple tools used, 
+                it's hard to know what's final, what's expired, or who's signed what with who and what has been agreed to!
+              </p>
+            </div>
+
+            {/* GIF/Video Placeholder - For Future Upload */}
+            <Card className="p-8 md:p-12 bg-gradient-to-br from-red-50 to-orange-50 border-2 border-red-200 shadow-2xl">
+              <div className="relative bg-white rounded-lg shadow-lg overflow-hidden" style={{ minHeight: '400px' }}>
+                {/* Replace this div with your animated GIF or video */}
+                <div className="absolute inset-0 flex items-center justify-center bg-black/20 hover:bg-black/30 transition-all duration-300 group">
+                  <div className="text-center">
+                    <PlayCircle className="w-20 h-20 text-white mb-4 mx-auto group-hover:scale-110 transition-transform duration-300" />
+                    <p className="text-white text-lg font-medium bg-black/50 px-6 py-3 rounded-lg">
+                      Upload your animated GIF or video here
+                    </p>
+                    <p className="text-white/80 text-sm mt-2">
+                      (Showing the chaotic old process with multiple tools)
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="mt-8 flex flex-wrap gap-4 justify-center">
+                {['Multiple Tools', 'Version Confusion', 'Email Chains', 'Lost Documents', 'Time Consuming'].map((pain) => (
+                  <div key={pain} className="px-4 py-2 bg-red-100 text-red-700 rounded-full text-sm font-medium">
+                    {pain}
+                  </div>
+                ))}
+              </div>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Transition Section */}
+      <section className="py-16 bg-gradient-to-r from-[#003B73] via-[#0055A5] to-[#003B73]  relative overflow-hidden">
+        {/* <div className="absolute inset-0 opacity-20">
+          <div className="absolute inset-0 animate-pulse" style={{
+            backgroundImage: 'linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 30%, rgba(255,255,255,0.1) 70%, transparent 70%)',
+            backgroundSize: '50px 50px'
+          }} />
+        </div> */}
+        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
+            There's a Better Way
+          </h2>
+          <p className="text-xl text-white/90 font-light">
+            Meet eNDA Technologies — the all-in-one platform for drafting, editing, 
+            agreeing, and managing NDAs in minutes.
+          </p>
+        </div>
+      </section>
+
+      {/* Solution Section - eNDA Workflow */}
+      <section className="py-20 md:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div 
+            id="solution"
+            data-animate
+            className={`transition-all duration-1000 ${
+              isVisible.solution ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}
+          >
+            <div className="text-center mb-16">
+              <span className="inline-block px-4 py-2 bg-green-50 text-green-600 rounded-full text-sm font-semibold mb-6">
+                THE eNDA WAY
+              </span>
+              <h2 className="text-4xl md:text-5xl font-bold text-[#003366] mb-6">
+                Simple. Fast. Intelligent.
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                One platform. One workflow. Complete control.
+              </p>
+            </div>
+
+            <Card className="p-8 md:p-12 bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-[#0066CC] shadow-2xl relative overflow-hidden">
+              {/* Visual representation of negotiation */}
+              <div className="relative bg-white rounded-lg shadow-lg overflow-hidden p-12 md:p-20">
+                <div className="flex items-center justify-center gap-8 md:gap-16">
+                  {/* Person 1 */}
+                  <div className="flex flex-col items-center animate-in slide-in-from-left duration-1000">
+                    <div className="w-20 h-20 md:w-28 md:h-28 bg-gradient-to-br from-[#003366] to-[#0066CC] rounded-full flex items-center justify-center shadow-xl">
+                      <User className="w-10 h-10 md:w-14 md:h-14 text-white" />
+                    </div>
+                    <p className="mt-4 text-sm md:text-base font-semibold text-[#003366]">Party A</p>
+                  </div>
+
+                  {/* eNDA Logo/Connection */}
+                  <div className="flex flex-col items-center animate-in zoom-in duration-1000 delay-300">
+                    <div className="relative">
+                      {/* Connection lines */}
+                      <div className="absolute top-1/2 -left-12 md:-left-20 w-12 md:w-20 h-0.5 bg-gradient-to-r from-[#0066CC] to-transparent" />
+                      <div className="absolute top-1/2 -right-12 md:-right-20 w-12 md:w-20 h-0.5 bg-gradient-to-l from-[#0066CC] to-transparent" />
+                      
+                      {/* Central eNDA element */}
+                      <div className="w-24 h-24 md:w-32 md:h-32 bg-gradient-to-br from-[#0066CC] to-[#0099FF] rounded-2xl flex items-center justify-center shadow-2xl transform hover:scale-110 transition-all duration-300">
+                        <div className="text-center">
+                          <FileText className="w-10 h-10 md:w-12 md:h-12 text-white mb-2 mx-auto" />
+                          <p className="text-white font-bold text-xs md:text-sm">eNDA</p>
+                        </div>
+                      </div>
+                      
+                      {/* Pulse effect */}
+                      <div className="absolute inset-0 rounded-2xl bg-[#0066CC] opacity-20 animate-ping" />
+                    </div>
+                    <p className="mt-4 text-xs md:text-sm font-medium text-[#0066CC]">ONE PLATFORM</p>
+                  </div>
+
+                  {/* Person 2 */}
+                  <div className="flex flex-col items-center animate-in slide-in-from-right duration-1000">
+                    <div className="w-20 h-20 md:w-28 md:h-28 bg-gradient-to-br from-[#003366] to-[#0066CC] rounded-full flex items-center justify-center shadow-xl">
+                      <User className="w-10 h-10 md:w-14 md:h-14 text-white" />
+                    </div>
+                    <p className="mt-4 text-sm md:text-base font-semibold text-[#003366]">Party B</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="mt-8 flex flex-wrap gap-4 justify-center">
+                {['AI-Powered', 'Single Platform', 'Real-Time Collaboration', 'Instant Signing', 'Smart Management'].map((benefit) => (
+                  <div key={benefit} className="px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-medium">
+                    <CheckCircle className="w-4 h-4 inline mr-2" />
+                    {benefit}
+                  </div>
+                ))}
+              </div>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Grid */}
+      <section className="py-20 md:py-32 bg-gradient-to-b from-gray-50 to-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div 
+            id="features"
+            data-animate
+            className={`transition-all duration-1000 ${
+              isVisible.features ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}
+          >
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold text-[#003366] mb-6">
+                How eNDA Works
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Three simple steps to transform your NDA process
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                {
+                  icon: FileText,
+                  title: "Draft with Intelligence",
+                  description: "Choose a trusted, lawyer-approved template or upload your own and use our flow — or easily draft and edit your own with AI assistance."
+                },
+                {
+                  icon: Zap,
+                  title: "Toggle & Optimize",
+                  description: "Toggle key terms like Term, Non-solicit or Severability, and let AI help you draft, analyze, and suggest balanced language both sides can trust."
+                },
+                {
+                  icon: Users,
+                  title: "Agree & Sign",
+                  description: "Invite your counterparty, agree, and sign — all in one place. No more email chains or version confusion."
+                }
+              ].map((feature, index) => (
+                <Card 
+                  key={index}
+                  className="p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-white border-2 border-gray-100"
+                  style={{
+                    animationDelay: `${index * 200}ms`
+                  }}
+                >
+                  <div className="w-16 h-16 bg-gradient-to-br from-[#0066CC] to-[#0099FF] rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                    <feature.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-[#003366] mb-4">{feature.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+
+
+
+{/* 
+
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <Badge className="bg-emerald-100 text-emerald-700 border-0 mb-4">
+              Simple Process
+            </Badge>
+            <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
+              Get started in 3 easy steps
+            </h2>
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+              Create, collaborate, and execute agreements in minutes
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-12">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
+                1
+              </div>
+              <h3 className="text-2xl font-semibold text-slate-900 mb-4">
+                Choose a Template
+              </h3>
+              <p className="text-slate-600">
+                Select from our library of pre-built legal templates or upload your own using AI to quickly standardize it to our legal flow, enrich your data and customize it to your needs.
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
+                2
+              </div>
+              <h3 className="text-2xl font-semibold text-slate-900 mb-4">
+                Collaborate & Review
+              </h3>
+              <p className="text-slate-600">
+                Invite counterparties to review and negotiate terms in real-time. Track changes with intelligent version control.
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
+                3
+              </div>
+              <h3 className="text-2xl font-semibold text-slate-900 mb-4">
+                Sign & Execute
+              </h3>
+              <p className="text-slate-600">
+                Secure e-signatures with cryptographic verification. Get executed PDF instantly with tamper-proof audit trail.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section> */}
+
 
       {/* Features Section */}
       <section id="features" className="py-20 lg:py-32 bg-white">
@@ -513,60 +812,8 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* How It Works */}
-      <section id="how-it-works" className="py-20 lg:py-32 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <Badge className="bg-emerald-100 text-emerald-700 border-0 mb-4">
-              Simple Process
-            </Badge>
-            <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
-              Get started in 3 easy steps
-            </h2>
-            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-              Create, collaborate, and execute agreements in minutes
-            </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-12">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
-                1
-              </div>
-              <h3 className="text-2xl font-semibold text-slate-900 mb-4">
-                Choose a Template
-              </h3>
-              <p className="text-slate-600">
-                Select from our library of pre-built legal templates or upload your own using AI to quickly standardize it to our legal flow, enrich your data and customize it to your needs.
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
-                2
-              </div>
-              <h3 className="text-2xl font-semibold text-slate-900 mb-4">
-                Collaborate & Review
-              </h3>
-              <p className="text-slate-600">
-                Invite counterparties to review and negotiate terms in real-time. Track changes with intelligent version control.
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
-                3
-              </div>
-              <h3 className="text-2xl font-semibold text-slate-900 mb-4">
-                Sign & Execute
-              </h3>
-              <p className="text-slate-600">
-                Secure e-signatures with cryptographic verification. Get executed PDF instantly with tamper-proof audit trail.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
+      <section className="py-20 bg-gradient-to-r from-[#003B73] via-[#0055A5] to-[#003B73] text-white">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
             Ready to revolutionize your legal workflow?
@@ -661,12 +908,12 @@ export default function Landing() {
               <ul className="space-y-2 text-sm text-slate-400">
                 <li className="flex items-center gap-2">
                   <Mail className="w-4 h-4" />
-                  <a href="mailto:hello@enda.com" className="hover:text-white transition-colors">hello@enda.com</a>
+                  <a href="mailto:hello@legal-flow.app" className="hover:text-white transition-colors">hello@legal-flow.app</a>
                 </li>
-                <li className="flex items-center gap-2">
+                {/* <li className="flex items-center gap-2">
                   <Phone className="w-4 h-4" />
                   <a href="tel:+1234567890" className="hover:text-white transition-colors">+1 (234) 567-890</a>
-                </li>
+                </li> */}
               </ul>
               <div className="flex gap-3 mt-4">
                 <a href="#" className="w-8 h-8 bg-slate-800 rounded-full flex items-center justify-center hover:bg-slate-700 transition-colors">

@@ -3,7 +3,7 @@ import Layout from "./Layout.jsx";
 
 import Landing from "./Landing";
 
-import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, useLocation, Navigate } from 'react-router-dom';
 
 const PAGES = {
     
@@ -33,8 +33,8 @@ function PagesContent() {
     return (
         <Layout currentPageName={currentPage}>
             <Routes>            
-                
-                    <Route path="/" element={<Landing />} />
+                 <Route path="/" element={<Navigate to="/enda" replace />} />
+                    <Route path="/enda" element={<Landing />} />
                 
                 
                 
