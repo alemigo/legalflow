@@ -193,7 +193,7 @@ export default function Landing() {
             <div className="flex items-center gap-3 rounded">
                   <Button
                     variant="ghost"
-                    onClick={() => handleNavigateWithEmail("https://enda.legal-flow.app/dashboard?email=" + encodeURIComponent(email))}
+                    onClick={() => (window.location.href = "https://enda.legal-flow.app/dashboard")}
                     className="text-slate-700 hover:text-slate-900 font-medium transition-colors"
                   >
                     Dashboard
@@ -237,7 +237,7 @@ export default function Landing() {
                 </div>
                 <Button
                   className="bg-[#FF6B35] hover:bg-[#FF5722] text-white h-12 px-8 rounded-full font-semibold"
-                  onClick={() => handleNavigateWithEmail("https://enda.legal-flow.app/dashboard?email=" + encodeURIComponent(email))}
+                  onClick={() => handleNavigateWithEmail("https://enda.legal-flow.app/getstarted?email=" + encodeURIComponent(email))}
                 >
                   Get started for free
                   <ArrowRight className="w-4 h-4 ml-2" />
@@ -787,7 +787,7 @@ export default function Landing() {
                   </ul>
                   <Button
                     disabled={tier.isComingSoon}
-                    onClick={() => handleNavigateWithEmail("https://enda.legal-flow.app/dashboard?email=" + encodeURIComponent(email) + "&plan=" + encodeURIComponent(tier.name))}
+                    onClick={() => handleNavigateWithEmail("https://enda.legal-flow.app/getstarted?email=" + encodeURIComponent(email) + "&plan=" + encodeURIComponent(tier.name))}
                     className={`w-full h-12 ${
                       tier.popular
                         ? 'bg-blue-600 hover:bg-blue-700 text-white'
@@ -826,7 +826,7 @@ export default function Landing() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               className="bg-[#FF6B35] hover:bg-[#FF5722] text-white h-14 px-8 text-lg rounded-full font-semibold"
-              onClick={() => handleNavigateWithEmail("https://enda.legal-flow.app/dashboard?email=" + encodeURIComponent(email))}
+              onClick={() => handleNavigateWithEmail("https://enda.legal-flow.app/getstarted?email=" + encodeURIComponent(email))}
             >
               Start free trial
               <ArrowRight className="w-5 h-5 ml-2" />
