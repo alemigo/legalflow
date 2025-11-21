@@ -28,12 +28,32 @@ import {
   PenTool, // Added PenTool icon
   User
 } from "lucide-react";
+import '../App.css';
 
 export default function Landing() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
+  const [showEmailClass, setShowEmailClass] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState(null);
+  const emailRef = useRef(null);
+
+  const validateEmailFormat = (value) => {
+    const re = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[A-Za-z]{2,}$/;
+    return re.test(String(value).toLowerCase());
+  };
+
+  const handleNavigateWithEmail = (targetUrl) => {
+    if (email.trim() !== '') {
+      if (!validateEmailFormat(email)) {
+        setShowEmailClass(true);
+        emailRef.current?.focus();
+        return;
+      }
+      setShowEmailClass(false);
+    }
+    window.location.href = targetUrl;
+  };
 
   const [isVisible, setIsVisible] = useState({});
   const observerRef = useRef(null);
@@ -173,7 +193,7 @@ export default function Landing() {
             <div className="flex items-center gap-3 rounded">
                   <Button
                     variant="ghost"
-                    onClick={() => window.location.href = "https://enda.legal-flow.app/dashboard?email=" + encodeURIComponent(email)}
+                    onClick={() => handleNavigateWithEmail("https://enda.legal-flow.app/dashboard?email=" + encodeURIComponent(email))}
                     className="text-slate-700 hover:text-slate-900 font-medium transition-colors"
                   >
                     Dashboard
@@ -206,16 +226,18 @@ export default function Landing() {
                 <div className="relative flex-1 max-w-md">
                   <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
                   <Input
+                    ref={emailRef}
                     type="email"
+                    pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[A-Za-z]{2,}"
                     placeholder="Enter your email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="pl-12 h-12 text-slate-900 bg-white border-0"
+                    className={`pl-12 h-12 text-slate-900 bg-white border-0 ${showEmailClass ? 'email-input' : ''}`}
                   />
                 </div>
                 <Button
                   className="bg-[#FF6B35] hover:bg-[#FF5722] text-white h-12 px-8 rounded-full font-semibold"
-                  onClick={() => window.location.href = "https://enda.legal-flow.app/dashboard?email=" + encodeURIComponent(email)}
+                  onClick={() => handleNavigateWithEmail("https://enda.legal-flow.app/dashboard?email=" + encodeURIComponent(email))}
                 >
                   Get started for free
                   <ArrowRight className="w-4 h-4 ml-2" />
@@ -765,7 +787,7 @@ export default function Landing() {
                   </ul>
                   <Button
                     disabled={tier.isComingSoon}
-                    onClick={() => window.location.href = "https://enda.legal-flow.app/dashboard?email=" + encodeURIComponent(email) + "&plan=" + encodeURIComponent(tier.name)}
+                    onClick={() => handleNavigateWithEmail("https://enda.legal-flow.app/dashboard?email=" + encodeURIComponent(email) + "&plan=" + encodeURIComponent(tier.name))}
                     className={`w-full h-12 ${
                       tier.popular
                         ? 'bg-blue-600 hover:bg-blue-700 text-white'
@@ -804,7 +826,7 @@ export default function Landing() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               className="bg-[#FF6B35] hover:bg-[#FF5722] text-white h-14 px-8 text-lg rounded-full font-semibold"
-              onClick={() => window.location.href = "https://enda.legal-flow.app/dashboard?email=" + encodeURIComponent(email)}
+              onClick={() => handleNavigateWithEmail("https://enda.legal-flow.app/dashboard?email=" + encodeURIComponent(email))}
             >
               Start free trial
               <ArrowRight className="w-5 h-5 ml-2" />

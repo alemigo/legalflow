@@ -1,0 +1,4 @@
+.email-input:invalid {
+  border-color: #ff0000; /* Red border for invalid email */
+  border-width: 5px;
+}
