@@ -61,7 +61,7 @@ export default function Landing() {
     {
       icon: Sparkles,
       title: "AI-Assisted Drafting and Smart Analytics",
-      description: "Intelligent document work flow with AI-powered suggestions; track document status, edits, and legal insights"
+      description: "Consolidates document work flow featuring AI-powered capabilities; track document status, edits, and legal insights"
     },
     {
       icon: Shield,
@@ -346,8 +346,8 @@ export default function Landing() {
             </h1>
             
             <p className="text-xl md:text-2xl text-[#003366] mb-12 leading-relaxed font-light">
-              Drafts in Word. Edits piling up. Emails flying back and forth. Signatures in DocuSign. 
-              Conversions to PDF. Redlines against which version?
+              Drafts in Word. Emails flying back and forth. Redlines and edits piling up across versions. Signatures in DocuSign. 
+              Conversions to PDF. Stored in Dropbox or local folders. Has it been fully executed?!?!
             </p>
 
             <Button 
@@ -382,7 +382,7 @@ export default function Landing() {
                 The Cumbersome Reality
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                Final executed docs buried in Dropbox, if they were saved. On top of the multiple tools used, 
+                Final executed docs buried in Dropbox, if saved. On top of the multiple tools used, 
                 it's hard to know what's final, what's expired, or who's signed what with who and what has been agreed to!
               </p>
             </div>
@@ -442,7 +442,7 @@ export default function Landing() {
                 Simple. Fast. Intelligent.
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                One platform. One workflow. Complete control.
+                One platform. One workflow. Complete control. Useful for NDAs and any agreement, especially high frequency but lower value ones!
               </p>
             </div>
 
@@ -526,12 +526,12 @@ export default function Landing() {
                 {
                   icon: FileText,
                   title: "Draft with Intelligence",
-                  description: "Choose a trusted, lawyer-approved template or upload your own and use our flow — or easily draft and edit your own with AI assistance."
+                  description: "Choose a trusted, lawyer-approved template or upload your own with AI assistance, either way, easily edit and process using our technology."
                 },
                 {
                   icon: Zap,
                   title: "Toggle & Optimize",
-                  description: "Toggle key terms like Term, Non-solicit or Severability, and let AI help you draft, analyze, and suggest balanced language both sides can trust."
+                  description: "Toggle key terms and provisions like non-solicit or severability, and let AI help you draft, analyze, and suggest balanced language both sides can trust."
                 },
                 {
                   icon: Users,
