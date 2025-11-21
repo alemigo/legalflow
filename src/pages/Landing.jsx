@@ -858,7 +858,7 @@ export default function Landing() {
             </p>
           </div>
           <div className="grid md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-            {['Service Agreements', 'Employment Contracts', 'Consulting Agreements', 'Partnership Agreements'].map((item, idx) => (
+            {['Service Agreements', 'Employment Contracts', 'Exclusivity Agreements', 'Real Estate/Insurance', 'Consulting Agreements', 'Partnership Agreements'].map((item, idx) => (
               <Card key={idx} className="text-center border-2 border-dashed border-slate-300 bg-white">
                 <CardContent className="pt-8 pb-6">
                   <FileText className="w-8 h-8 text-slate-400 mx-auto mb-3" />
