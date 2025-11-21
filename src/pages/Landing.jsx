@@ -404,8 +404,7 @@ export default function Landing() {
                 The Cumbersome Reality
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                Final executed docs buried in Dropbox, if saved. On top of the multiple tools used, 
-                it's hard to know what's final, what's expired, or who's signed what with who and what has been agreed to!
+                On top of the multiple tools used, it's hard to know what's final, what's expired, or who's signed what with who and what has been agreed to!
               </p>
             </div>
 
@@ -512,7 +511,7 @@ export default function Landing() {
               </div>
               
               <div className="mt-8 flex flex-wrap gap-4 justify-center">
-                {['AI-Powered', 'Single Platform', 'Real-Time Collaboration', 'Instant Signing', 'Smart Management'].map((benefit) => (
+                {['AI-Features', 'Single Platform for All Steps', 'Automated Notifications', 'Faster Execution', 'Smart Management'].map((benefit) => (
                   <div key={benefit} className="px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-medium">
                     <CheckCircle className="w-4 h-4 inline mr-2" />
                     {benefit}
