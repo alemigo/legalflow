@@ -328,16 +328,16 @@ export default function Landing() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 text-center">
             <div>
-              <p className="text-3xl font-bold text-slate-900 mb-1">Thousands</p>
-              <p className="text-sm text-slate-600">Agreements Leveraged</p>
+              <p className="text-3xl font-bold text-slate-900 mb-1">Lawyer-approved</p>
+              <p className="text-sm text-slate-600">000's of Agreements Leveraged</p>
             </div>
             <div>
-              <p className="text-3xl font-bold text-slate-900 mb-1">99.9%</p>
-              <p className="text-sm text-slate-600">Uptime SLA</p>
+              <p className="text-3xl font-bold text-slate-900 mb-1">90%+</p>
+              <p className="text-sm text-slate-600">Time savings - minutes vs. weeks</p>
             </div>
             <div>
-              <p className="text-3xl font-bold text-slate-900 mb-1">5 min</p>
-              <p className="text-sm text-slate-600">Average Time to Sign</p>
+              <p className="text-3xl font-bold text-slate-900 mb-1">100%</p>
+              <p className="text-sm text-slate-600">Easy recall and transparent</p>
             </div>
           </div>
         </div>
@@ -553,7 +553,7 @@ export default function Landing() {
                 {
                   icon: Zap,
                   title: "Toggle & Optimize",
-                  description: "Toggle key terms and provisions like non-solicit or severability, and let AI help you draft, analyze, and suggest balanced language both sides can trust."
+                  description: "Toggle on to add provisions such as non-solicit or non-circumvention from a library; let AI help you draft, analyze, and suggest balanced language both sides can trust."
                 },
                 {
                   icon: Users,
@@ -772,7 +772,7 @@ export default function Landing() {
                   )}
                   {tier.popular && (
                     <p className="text-xs text-green-600 font-semibold mt-2">
-                      💡 Save $6,000+ annually vs traditional legal fees
+                      💡 Save thousands annually vs traditional legal fees
                     </p>
                   )}
                 </CardHeader>
