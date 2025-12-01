@@ -32,28 +32,8 @@ import '../App.css';
 
 export default function Landing() {
   const navigate = useNavigate();
-  const [email, setEmail] = useState("");
-  const [showEmailClass, setShowEmailClass] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState(null);
-  const emailRef = useRef(null);
-
-  const validateEmailFormat = (value) => {
-    const re = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[A-Za-z]{2,}$/;
-    return re.test(String(value).toLowerCase());
-  };
-
-  const handleNavigateWithEmail = (targetUrl) => {
-    if (email.trim() !== '') {
-      if (!validateEmailFormat(email)) {
-        setShowEmailClass(true);
-        emailRef.current?.focus();
-        return;
-      }
-      setShowEmailClass(false);
-    }
-    window.location.href = targetUrl;
-  };
 
   const [isVisible, setIsVisible] = useState({});
   const observerRef = useRef(null);
@@ -139,11 +119,9 @@ export default function Landing() {
         "Team collaboration",
         "Smart analytics"
       ],
-      cta: "Start 14-day trial",
+      cta: "Subscribe",
       popular: true,
       color: "blue",
-      promo: "special offer: save 25% with $250 annual billing for a limited time",
-      hasSpecialOffer: true
     },
     {
       name: "Professional",
@@ -223,21 +201,10 @@ export default function Landing() {
                 efficient document management that simplifies the entire legal process. Proven transaction based professional agreements leveraging two decades of institutional scale deals.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <div className="relative flex-1 max-w-md">
-                  <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
-                  <Input
-                    ref={emailRef}
-                    type="email"
-                    pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[A-Za-z]{2,}"
-                    placeholder="Enter your email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className={`pl-12 h-12 text-slate-900 bg-white border-0 ${showEmailClass ? 'email-input' : ''}`}
-                  />
-                </div>
+                {/* email input removed */}
                 <Button
                   className="bg-[#FF6B35] hover:bg-[#FF5722] text-white h-12 px-8 rounded-full font-semibold"
-                  onClick={() => handleNavigateWithEmail("https://enda.legal-flow.app/getstarted?email=" + encodeURIComponent(email))}
+                  onClick={() => (window.location.href = "https://enda.legal-flow.app/getstarted")}
                 >
                   Get started for free
                   <ArrowRight className="w-4 h-4 ml-2" />
@@ -547,12 +514,12 @@ export default function Landing() {
                 {
                   icon: FileText,
                   title: "Draft with Intelligence",
-                  description: "Choose a trusted, lawyer-approved template or upload your own with AI assistance, either way, easily edit and process using our technology."
+                  description: "Choose a trusted, lawyer-approved template or upload your own with AI assistance to extract from real agreements; easily customize and process using our technology."
                 },
                 {
                   icon: Zap,
                   title: "Toggle & Optimize",
-                  description: "Toggle on to add provisions such as non-solicit or non-circumvention from a library; let AI help you draft, analyze, and suggest balanced language both sides can trust."
+                  description: "Simply toggle on/off provisions such as non-solicit or non-circumvention from our master library or your own dedicated set; use AI to analyze drafts / exchanges as you wish."
                 },
                 {
                   icon: Users,
@@ -786,7 +753,7 @@ export default function Landing() {
                   </ul>
                   <Button
                     disabled={tier.isComingSoon}
-                    onClick={() => handleNavigateWithEmail("https://enda.legal-flow.app/getstarted?email=" + encodeURIComponent(email) + "&plan=" + encodeURIComponent(tier.name))}
+                    onClick={() => (window.location.href = "https://enda.legal-flow.app/getstarted?plan=" + encodeURIComponent(tier.name))}
                     className={`w-full h-12 ${
                       tier.popular
                         ? 'bg-blue-600 hover:bg-blue-700 text-white'
@@ -825,9 +792,9 @@ export default function Landing() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               className="bg-[#FF6B35] hover:bg-[#FF5722] text-white h-14 px-8 text-lg rounded-full font-semibold"
-              onClick={() => handleNavigateWithEmail("https://enda.legal-flow.app/getstarted?email=" + encodeURIComponent(email))}
+              onClick={() => (window.location.href = "https://enda.legal-flow.app/getstarted")}
             >
-              Start free trial
+              Start free
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
             {/* <Button
