@@ -34,6 +34,7 @@ export default function Landing() {
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState(null);
+  const [billingPeriod, setBillingPeriod] = useState('monthly');
 
   const [isVisible, setIsVisible] = useState({});
   const observerRef = useRef(null);
@@ -93,7 +94,8 @@ export default function Landing() {
   const pricingTiers = [
     {
       name: "Free",
-      price: "$0",
+      priceMonthly: "$0",
+      priceAnnual: "$0",
       period: "/month",
       description: "Perfect for getting started",
       features: [
@@ -109,7 +111,8 @@ export default function Landing() {
     },
     {
       name: "Business",
-      price: "$25",
+      priceMonthly: "$25",
+      priceAnnual: "$250",
       period: "/month",
       description: "For growing businesses",
       features: [
@@ -125,7 +128,8 @@ export default function Landing() {
     },
     {
       name: "Professional",
-      price: "Contact sales for more",
+      priceMonthly: "Contact sales for more",
+      priceAnnual: "Contact sales for more",
       period: "",
       description: "For legal teams & enterprises",
       features: [
@@ -141,6 +145,17 @@ export default function Landing() {
       isComingSoon: true
     }
   ];
+
+  const calculateSavings = (monthlyPrice, annualPrice) => {
+    const monthlyNum = parseFloat(monthlyPrice.replace('$', ''));
+    const annualNum = parseFloat(annualPrice.replace('$', ''));
+    if (monthlyNum > 0 && annualNum > 0) {
+      const yearlyMonthly = monthlyNum * 12;
+      const savings = ((yearlyMonthly - annualNum) / yearlyMonthly * 100).toFixed(0);
+      return parseInt(savings);
+    }
+    return null;
+  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -659,9 +674,41 @@ export default function Landing() {
                 Between attorney fees for drafting, review, negotiations, and execution, most businesses spend hundreds to thousands of dollars on NDAs through traditional legal channels utilizing a cumbersome process requiring several applications. eNDA automates this entire process at a fraction of the time and cost with a simple subcription model rather than a per hour or per document cost.
               </p>
             </div>
+
+            {/* Billing Period Toggle */}
+            <div className="flex justify-center mb-12 mt-8">
+              <div className="inline-flex rounded-full border-2 border-slate-300 bg-white p-1">
+                <button
+                  onClick={() => setBillingPeriod('monthly')}
+                  className={`px-6 py-2 rounded-full font-semibold transition-all ${
+                    billingPeriod === 'monthly'
+                      ? 'bg-blue-600 text-white'
+                      : 'text-slate-700 hover:text-slate-900'
+                  }`}
+                >
+                  Monthly
+                </button>
+                <button
+                  onClick={() => setBillingPeriod('annual')}
+                  className={`px-6 py-2 rounded-full font-semibold transition-all relative ${
+                    billingPeriod === 'annual'
+                      ? 'bg-blue-600 text-white'
+                      : 'text-slate-700 hover:text-slate-900'
+                  }`}
+                >
+                  Annual
+                  <Badge className="absolute -top-3 -right-2 bg-emerald-500 text-white border-0 text-xs px-2 py-0.5">
+                    Save 17%
+                  </Badge>
+                </button>
+              </div>
+            </div>
           </div>
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {pricingTiers.map((tier, index) => (
+            {pricingTiers.map((tier, index) => {
+              const displayPrice = billingPeriod === 'monthly' ? tier.priceMonthly : tier.priceAnnual;
+              const savings = billingPeriod === 'annual' ? calculateSavings(tier.priceMonthly, tier.priceAnnual) : null;
+              return (
               <Card
                 key={index}
                 className={`relative border-2 ${
@@ -719,13 +766,21 @@ export default function Landing() {
                     {tier.isComingSoon ? (
                       <Badge className="bg-purple-100 text-purple-700 border border-purple-300 text-xs px-2 py-0.5">
                         <Sparkles className="w-3 h-3 mr-1 inline" />
-                        {tier.price}
+                        {displayPrice}
                       </Badge>
                     ) : (
                       <>
-                        <span className="text-5xl font-bold text-slate-900">{tier.price}</span>
-                        {tier.period && <span className="text-slate-600">{tier.period}</span>}
+                        <span className="text-5xl font-bold text-slate-900">{displayPrice}</span>
+                        {billingPeriod === 'monthly' && tier.period && <span className="text-slate-600">{tier.period}</span>}
+                        {billingPeriod === 'annual' && <span className="text-slate-600">/year</span>}
                       </>
+                    )}
+                    {savings && (
+                      <div className="mt-2">
+                        <Badge className="bg-emerald-100 text-emerald-700 border-0 text-xs">
+                          Save {savings}%
+                        </Badge>
+                      </div>
                     )}
                   </div>
                   <p className="text-sm text-slate-600">{tier.description}</p>
@@ -753,7 +808,7 @@ export default function Landing() {
                   </ul>
                   <Button
                     disabled={tier.isComingSoon}
-                    onClick={() => (window.location.href = "https://enda.legal-flow.app/getstarted?plan=" + encodeURIComponent(tier.name))}
+                    onClick={() => (window.location.href = "https://enda.legal-flow.app/getstarted?plan=" + encodeURIComponent(tier.name) + "&term=" + billingPeriod)}
                     className={`w-full h-12 ${
                       tier.popular
                         ? 'bg-blue-600 hover:bg-blue-700 text-white'
@@ -766,7 +821,8 @@ export default function Landing() {
                   </Button>
                 </CardContent>
               </Card>
-            ))}
+            );
+            })}
           </div>
           <div className="text-center mt-12">
             <p className="text-slate-600 mb-4">
