@@ -61,23 +61,23 @@ export default function Landing() {
   const features = [
     {
       icon: Sparkles,
-      title: "AI-Assisted Drafting and Smart Analytics",
-      description: "Consolidates document work flow featuring AI-powered capabilities; track document status, edits, and legal insights"
+      title: "Unified agreement work flow with AI-powered features",
+      description: "End to end platform speeds up contract creation, enhance negotiations with intuitive comparisons, legal insights, and smart analytics across your private repository"
     },
     {
       icon: Shield,
-      title: "Proven NDAs, Transaction Based Professional Agreements",
+      title: "Proven Transaction-Based Professional NDAs and Agreements",
       description: "Backed by 20 years and over $5b of transactions; leveraging databases with thousands of precedents"
     },
     {
       icon: Zap,
-      title: "Lightning Fast",
+      title: "Lightning Fast and Standardized",
       description: "Create, send, and execute agreements in minutes, not days"
     },
     {
       icon: Users,
-      title: "Collaborative, For Business Users or Lawyers",
-      description: "Real-time collaboration with counterparties and team members"
+      title: "For Business Users and Lawyers",
+      description: "Intuitive, real-time collaborative platform, scale effortlessly with your needs"
     },
     {
       icon: Lock,
@@ -87,7 +87,7 @@ export default function Landing() {
     {
       icon: TrendingUp,
       title: "How It Should Be",
-      description: "Consolidate Outlook, Word, Adobe, Docusign, Dropbox, and free up your lawyer to higher value tasks"
+      description: "Unifies fragmented processes from Outlook, Word, Adobe, Docusign, Dropbox, and free up your lawyer to higher value tasks"
     }
   ];
 
@@ -100,12 +100,12 @@ export default function Landing() {
       description: "Perfect for getting started",
       features: [
         "2 NDAs per month or 10 total",
-        "Use our standardized or your own NDA",
-        "Storage and document management",
         "Receive additional free usage for referrals",
-        "Automated work flows and notifications"
+        "Use our standardized or your own NDA",
+        "Storage and document management / analytics",
+        "Unified automated work flows and notifications"
       ],
-      cta: "Start Free",
+      cta: "Start Free (no credit card)",
       popular: false,
       color: "slate"
     },
@@ -117,10 +117,9 @@ export default function Landing() {
       description: "For growing businesses",
       features: [
         "20 documents per month",
-        "Access growing database of legal templates covering additional use cases",
-        "Create custom templates for your teams using AI to leverage your database",
-        "Team collaboration",
-        "Smart analytics"
+        "Access growing database of legal templates covering multiple high frequency use cases (employment agreements, exclusivity, distribution, marketing, etc)",
+        "Efficiently scale legal - create templates for your teams easily with AI, spend less time generating and processing docs",
+        "Smart analytics leverage your central repository; manage, search, extract insights"
       ],
       cta: "Subscribe",
       popular: true,
@@ -135,9 +134,9 @@ export default function Landing() {
       features: [
         "Enhanced AI services",
         "Access to professional provisions library",
-        "Advanced administrator capabilities",
-        "API integrations into your tech stack",
-        "Priority support and discounted white glove attorney service"
+        "Advanced administrator capabilities and team collaboration",
+        "API integrations into your tech stack (CRM, HRM, payments etc)",
+        "Priority support and white glove attorney access with our partner ecosystem"
       ],
       cta: "Coming Soon",
       popular: false,
@@ -422,7 +421,7 @@ export default function Landing() {
           </h2>
           <p className="text-xl text-white/90 font-light">
             Meet eNDA Technologies — the all-in-one platform for drafting, editing, 
-            agreeing, and managing NDAs in minutes.
+            agreeing, and managing NDAs in minutes (and any agreement) - the Evolution of Negotiated Digital Agreements
           </p>
         </div>
       </section>
@@ -445,7 +444,7 @@ export default function Landing() {
                 Simple. Fast. Intelligent.
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                One platform. One workflow. Complete control. Useful for NDAs and any agreement, especially high frequency but lower value ones!
+                One platform. One workflow. Complete control. Useful for NDAs and any agreement, especially high frequency ones!
               </p>
             </div>
 
@@ -850,7 +849,7 @@ export default function Landing() {
               className="bg-[#FF6B35] hover:bg-[#FF5722] text-white h-14 px-8 text-lg rounded-full font-semibold"
               onClick={() => (window.location.href = "https://enda.legal-flow.app/getstarted")}
             >
-              Start free
+              Start free 
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
             {/* <Button
@@ -881,7 +880,7 @@ export default function Landing() {
             </p>
           </div>
           <div className="grid md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-            {['Service Agreements', 'Employment Contracts', 'Exclusivity Agreements', 'Real Estate/Insurance', 'Consulting Agreements', 'Partnership Agreements'].map((item, idx) => (
+            {['Service Agreements', 'Employment Contracts', 'Exclusivity Agreements', 'Real Estate/Insurance', 'Consulting Agreements', 'Influencer License Agreements', 'Selling Agreements', 'Partnership Agreements'].map((item, idx) => (
               <Card key={idx} className="text-center border-2 border-dashed border-slate-300 bg-white">
                 <CardContent className="pt-8 pb-6">
                   <FileText className="w-8 h-8 text-slate-400 mx-auto mb-3" />
