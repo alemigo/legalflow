@@ -37,7 +37,6 @@ function PagesContent() {
                     <Route path="/enda" element={<Landing />} />
                 
                 
-                
             </Routes>
         </Layout>
     );
