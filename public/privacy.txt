@@ -1,219 +1,217 @@
-ENDA Technologies Privacy Policy
+eNDA Technologies Privacy Policy
 Last Updated: December 5, 2025
-This Privacy Policy explains how ENDA Technologies, LLC (-ENDA,- -we,- -our,- -us-) collects, uses, discloses, and protects personal information when individuals and organizations access or use ENDA-s websites, applications, platforms, artificial intelligence tools, electronic signature tools, document-generation tools, and related products and services (collectively, the -Services-).
+This Privacy Policy explains how ENDA Technologies, LLC (“eNDA,” “we,” “our,” “us”) collects, uses, discloses, and protects personal information when individuals and organizations access or use eNDA’s mobile / desktop websites, applications, platforms, artificial intelligence tools, electronic signature tools, document-generation tools, and related products and services (collectively, the “Services”).
 By accessing or using the Services, you agree to the terms of this Privacy Policy.
-ENDA may act as either a data controller or a data processor depending on the context of processing, as explained below.
+eNDA may act as either a data controller or a data processor depending on the context of processing, as explained below.
 
 1. Scope and Application
 This Privacy Policy applies to personal information we process in connection with:
-- The ENDA platform, including document creation, editing, negotiation, signature, workflow automation, AI-based features, communications and storage.
-- Our websites, applications, marketing pages, and customer-support portals.
-- Communications with ENDA representatives, including sales, onboarding, and support teams.
-- Data used to provide analytics, improve the Services, and train certain AI and machine-learning models.
-This policy does not apply to third-party services you integrate with ENDA, or to User Content (defined below) where your organization acts as the controller and ENDA acts solely as the processor.
+• The eNDA platform, including document creation, editing, negotiation, signature, workflow automation, AI-based features, communications and storage.
+• Our websites, applications, marketing pages, and customer-support portals.
+• Communications with eNDA representatives, including sales, onboarding, and support teams.
+• Data used to provide analytics, improve the Services, and train certain AI and machine-learning models.
+This policy does not apply to third-party services you integrate with eNDA, or to User Content (defined below) where your organization acts as the controller and eNDA acts solely as the processor.
 
 2. Controller and Processor Roles
-ENDA as Processor
-For any information that customers or their users upload, create, edit, store, or manage using the Services (-User Content-), ENDA processes that information only on behalf of the customer and according to the customer-s instructions. This includes:
-- Documents and templates
-- Data fields, clauses, toggles, and redlines
-- Uploaded files
-- Signature workflows, audit trails, and timestamps
-- Communications within a workspace
-- Recipient information and workflow metadata
-For User Content, the customer (or the customer-s administrator) is the data controller and is responsible for handling privacy rights requests related to such data.
-ENDA as Controller
-ENDA acts as the data controller for information we collect for our own business and operational purposes. This includes:
-- Account registration and authentication
-- Billing and payment data
-- Usage analytics and product performance data
-- Marketing, sales, and business development
-- Security, fraud detection, and compliance
-- Optional identity verification features
-- AI model training using de-identified or aggregated data (see Section 7)
+eNDA as Processor
+For any information that customers or their users upload, create, edit, store, or manage using the Services (“User Content”), eNDA processes that information only on behalf of the customer and according to the customer’s instructions. This includes:
+• Documents and templates
+• Data fields, clauses, toggles, and redlines
+• Uploaded files
+• Signature workflows, audit trails, and timestamps
+• Communications within a workspace
+• Recipient information and workflow metadata
+For User Content, the customer (or the customer’s administrator) is the data controller and is responsible for handling privacy rights requests related to such data.
+eNDA as Controller
+eNDA acts as the data controller for information we collect for our own business and operational purposes. This includes:
+• Account registration and authentication
+• Billing and payment data
+• Usage analytics and product performance data
+• Marketing, sales, and business development
+• Security, fraud detection, and compliance
+• Optional identity verification features
+• AI model training using de-identified or aggregated data (see Section 7)
 
 3. Information We Collect
-ENDA collects the following categories of personal information. The specific information collected depends on your interactions with the Services.
+eNDA collects the following categories of personal information. The specific information collected depends on your interactions with the Services.
 A. Identifiers and Contact Information
-- Name and email address
-- Phone number
-- Organization name, job title, and role
-- Account login credentials
-- IP address and device identifiers
+• Name and email address
+• Phone number
+• Organization name, job title, and role
+• Account login credentials
+• IP address and device identifiers
 B. Account, Billing, and Payment Information
-- Subscription plan, billing address, invoice history
-- Payment card information collected and processed by Stripe or another payment processor
-- ENDA does not store full payment card numbers
+• Subscription plan, billing address, invoice history
+• Payment card information collected and processed by Stripe or another payment processor
+• eNDA does not store full payment card numbers
 C. User Content (Processor Role)
-- Document contents
-- Data entered into fields, clauses, templates, and workflows
-- Uploaded attachments
-- Comments, negotiation notes, and redlines
-- Names, emails, and workflow metadata for signers and recipients
-- Document-view events, signature events, authentication steps, and audit-trail elements
+• Document contents
+• Data entered into fields, clauses, templates, and workflows
+• Uploaded attachments
+• Comments, negotiation notes, and redlines
+• Names, emails, and workflow metadata for signers and recipients
+• Document-view events, signature events, authentication steps, and audit-trail elements
 D. Usage, Event, and Technical Data
-- Log files and diagnostics
-- Device type, browser type, operating system
-- IP address and approximate geolocation
-- Clickstream data, feature usage patterns, and interaction metrics
-- Error reports and performance analytics
-- Document event history (viewed, opened, edited, signed, etc.)
+• Log files and diagnostics
+• Device type, browser type, operating system
+• IP address and approximate geolocation
+• Clickstream data, feature usage patterns, and interaction metrics
+• Error reports and performance analytics
+• Document event history (viewed, opened, edited, signed, etc.)
 E. Optional Identity Verification or Biometric Information
-If your organization enables identity verification via Stripe Identity or another provider, ENDA may receive confirmation of verification results. Information processed by the vendor may include:
-- Facial images or biometric templates
-- Images of government-issued identification
-- Verification attributes (pass/fail, verified name, verified email)
-ENDA does not store raw biometric data. Such data is stored by the identity-verification provider under its own privacy terms.
+If your organization enables identity verification via Stripe Identity or another provider, eNDA may receive confirmation of verification results. Information processed by the vendor may include:
+• Facial images or biometric templates
+• Images of government-issued identification
+• Verification attributes (pass/fail, verified name, verified email)
+eNDA does not store raw biometric data. Such data is stored by the identity-verification provider under its own privacy terms.
 F. Marketing, Lead Generation, and Engagement Data
-- Web activity on ENDA websites
-- Email-open data, click tracking, and engagement metrics
-- Form submissions, trial sign-ups, and demo requests
-- Preferences for communication and product categories
-- Information used for cross-sell, upsell, or personalized recommendations
+• Web activity on eNDA websites
+• Email-open data, click tracking, and engagement metrics
+• Form submissions, trial sign-ups, and demo requests
+• Preferences for communication and product categories
+• Information used for cross-sell, upsell, or personalized recommendations
 G. Cookies, Tracking Technologies, and Behavioral Advertising
 We use cookies, web beacons, pixels, tags, and similar technologies to support:
-- Site functionality
-- Authentication
-- Analytics and product optimization
-- A/B testing
-- Marketing, advertising, and personalization
-- Cross-context behavioral advertising where permitted by applicable law
-Cookie preferences may be managed through ENDA-s cookie settings.
+• Site functionality
+• Authentication
+• Analytics and product optimization
+• A/B testing
+• Marketing, advertising, and personalization
+• Cross-context behavioral advertising where permitted by applicable law
+Cookie preferences may be managed through eNDA’s cookie settings.
 
 4. How We Use Personal Information
-ENDA uses personal information for the following business purposes.
+eNDA uses personal information for the following business purposes.
 A. Providing the Services
-- Creating, editing, and managing documents
-- Maintaining signature workflows, audit trails, and verification logs
-- Operating clause toggles, template libraries, and document automation
-- Running AI-assisted drafting, suggestions, and clause recommendations
-- Enabling integrations with customer-authorized third-party services
-- Providing customer support and troubleshooting
+• Creating, editing, and managing documents
+• Maintaining signature workflows, audit trails, and verification logs
+• Operating clause toggles, template libraries, and document automation
+• Running AI-assisted drafting, suggestions, and clause recommendations
+• Enabling integrations with customer-authorized third-party services
+• Providing customer support and troubleshooting
 B. Improving the Services
-- Feature optimization and performance analysis
-- Debugging, error detection, and quality assurance
-- Enhancing usability, workflows, and user experience
-- Understanding product adoption and usage patterns
-- Improving platform reliability and scalability
+• Feature optimization and performance analysis
+• Debugging, error detection, and quality assurance
+• Enhancing usability, workflows, and user experience
+• Understanding product adoption and usage patterns
+• Improving platform reliability and scalability
 C. AI and Machine Learning
-ENDA may use de-identified or aggregated data derived from User Content, usage data, or event data to:
-- Build, train, and maintain natural language models
-- Improve clause-level recommendations
-- Enhance document generation, editing, and risk-scoring features
-- Detect anomalies or risky document patterns
-- Support continued innovation in ENDA-s AI tools
+eNDA may use de-identified or aggregated data derived from User Content, usage data, or event data to:
+• Build, train, and maintain natural language models
+• Improve clause-level recommendations
+• Enhance document generation, editing, and risk-scoring features
+• Detect anomalies or risky document patterns
+• Support continued innovation in eNDA’s AI tools
 We do not use identifiable User Content for generalized AI model training unless contracted or permitted via customer settings.
-Customers may opt out of de-identified data use for AI improvements by contacting ENDA or through available administrative controls.
+Customers may opt out of de-identified data use for AI improvements by contacting eNDA or through available administrative controls.
 D. Analytics and Research
-- Assessing system performance
-- Aggregating statistics to understand customer needs
-- Conducting benchmarking and platform-wide analysis
-- Supporting product roadmap decisions
+• Assessing system performance
+• Aggregating statistics to understand customer needs
+• Conducting benchmarking and platform-wide analysis
+• Supporting product roadmap decisions
 E. Marketing and Cross-Selling
-- Sending communications related to new features, offers, or integrations
-- Tailoring content to industry, user behavior, or prior interactions
-- Presenting relevant partner services or future ENDA products
-- Conducting lead-nurturing campaigns
-- Measuring marketing effectiveness
+• Sending communications related to new features, offers, or integrations
+• Tailoring content to industry, user behavior, or prior interactions
+• Presenting relevant partner services or future eNDA products
+• Conducting lead-nurturing campaigns
+• Measuring marketing effectiveness
 You may opt out of marketing communications at any time.
 F. Security and Compliance
-- Detecting unauthorized access and unusual activity
-- Preventing fraud and abuse
-- Verifying identity
-- Complying with subpoenas, legal requests, and regulatory obligations
-- Enforcing our terms of service
+• Detecting unauthorized access and unusual activity
+• Preventing fraud and abuse
+• Verifying identity
+• Complying with subpoenas, legal requests, and regulatory obligations
+• Enforcing our terms of service
 
 5. How We Share Personal Information
-ENDA may share personal information with third parties in the following circumstances.
+eNDA may share personal information with third parties in the following circumstances.
 A. Service Providers and Sub-Processors
 We engage vendors who assist with:
-- Cloud hosting and infrastructure
-- Storage, backup, and security operations
-- Payment processing
-- Customer-support platforms
-- Email delivery and notification services
-- AI model hosting and inference
-- Optional identity verification
-- Analytics and performance monitoring
-These parties may only use information under ENDA-s instructions and for the contracted purpose.
+• Cloud hosting and infrastructure
+• Storage, backup, and security operations
+• Payment processing
+• Customer-support platforms
+• Email delivery and notification services
+• AI model hosting and inference
+• Optional identity verification
+• Analytics and performance monitoring
+These parties may only use information under eNDA’s instructions and for the contracted purpose.
 B. Integrations and API Partners
-If a customer authorizes an integration with a third-party system, ENDA may transmit the necessary data to that integration according to the customer-s configuration.
+If a customer authorizes an integration with a third-party system, eNDA may transmit the necessary data to that integration according to the customer’s configuration.
 C. Business Partners
 We may share limited personal information with select partners for co-marketing, cross-selling, and referring relevant offerings, consistent with applicable privacy laws and your opt-out rights.
 D. Legal and Safety Requirements
 We may disclose information:
-- To comply with legal requirements
-- To protect our rights, users, employees, or the public
-- To investigate or prevent fraud or security incidents
+• To comply with legal requirements
+• To protect our rights, users, employees, or the public
+• To investigate or prevent fraud or security incidents
 E. Business Transfers
-If ENDA enters into a merger, acquisition, financing, or similar transaction, personal information may be transferred as part of that transaction.
-F. -Selling- or -Sharing- Under Applicable Law
-ENDA does not sell personal information for monetary consideration.
-Certain data-sharing practices for advertising or analytics may be classified as -selling- or -sharing- under some state laws. Individuals may opt out of such practices.
+If eNDA enters into a merger, acquisition, financing, or similar transaction, personal information may be transferred as part of that transaction.
+F. “Selling” or “Sharing” Under Applicable Law
+eNDA does not sell personal information for monetary consideration. Certain data-sharing practices for advertising or analytics may be classified as “selling” or “sharing” under some state laws. Individuals may opt out of such practices.
 
 6. Cross-Border Data Transfers
-ENDA may process and store information in the United States or other jurisdictions.
-When transferring personal information internationally, ENDA uses appropriate legal mechanisms such as:
-- Standard Contractual Clauses
-- Data Privacy Framework participation (if applicable)
-- Other legally recognized safeguards
+eNDA may process and store information in the United States or other jurisdictions.
+When transferring personal information internationally, eNDA uses appropriate legal mechanisms such as:
+• Standard Contractual Clauses
+• Data Privacy Framework participation (if applicable)
+• Other legally recognized safeguards
 We maintain administrative, physical, and technical controls to protect personal information regardless of location.
 
 7. AI and Machine Learning Practices
-This section applies to all ENDA AI features, including document drafting, clause recommendations, analysis tools, and risk scoring.
+This section applies to all eNDA AI features, including document drafting, clause recommendations, analysis tools, and risk scoring.
 Default Practices
-ENDA uses de-identified or aggregated data derived from User Content to build, train, and maintain AI models that power certain Services. De-identified data is processed in a way that cannot reasonably be linked back to an identifiable individual or organization.
+eNDA uses de-identified or aggregated data derived from User Content to build, train, and maintain AI models that power certain Services. De-identified data is processed in a way that cannot reasonably be linked back to an identifiable individual or organization.
 Customer Controls
 Customers may opt out of the use of de-identified data from their accounts for AI improvement purposes.
 Identifiable User Content
-ENDA does not use identifiable User Content to train general-purpose AI models unless expressly agreed to in writing or enabled through administrative settings.
+eNDA does not use identifiable User Content to train general-purpose AI models unless expressly agreed to in writing or enabled through administrative settings.
 
 8. Your Privacy Rights
 Depending on your location, applicable law may grant you rights such as:
-- Access to personal information
-- Correction of inaccurate data
-- Deletion of certain information
-- Opt-out of targeted advertising or certain data sharing
-- Restriction or objection to certain processing
-- Withdrawal of consent
-- Appeal of a denied request
-- Portability of certain data
+• Access to personal information
+• Correction of inaccurate data
+• Deletion of certain information
+• Opt-out of targeted advertising or certain data sharing
+• Restriction or objection to certain processing
+• Withdrawal of consent
+• Appeal of a denied request
+• Portability of certain data
 Requests relating to User Content must be directed to the customer that controls that data.
 
 9. How to Exercise Your Rights
 Individuals may submit requests through:
-- ENDA-s privacy request portal
-- Email: privacy@enda.com
+• eNDA’s privacy request portal
+• Email: support@eNDAtech.app
 We may require identity verification before fulfilling certain requests.
 If we deny a request, you may appeal through the appeal instructions provided in our response.
 
 10. Data Retention
-ENDA retains personal information:
-- For as long as needed to provide the Services
-- As required by law
-- As necessary for legitimate business purposes such as audit, security, and compliance
-- According to customer instructions for User Content
+eNDA retains personal information:
+• For as long as needed to provide the Services
+• As required by law
+• As necessary for legitimate business purposes such as audit, security, and compliance
+• According to customer instructions for User Content
 
 11. Security
-ENDA employs administrative, technical, and physical safeguards, including:
-- Encryption in transit
-- Role-based access controls
-- Multi-factor authentication for internal systems
-- Network segmentation
-- Continuous monitoring and automated alerts
-- Secure development practices
-- Independent audits and assessments
+eNDA employs administrative, technical, and physical safeguards, including:
+• Encryption in transit
+• Role-based access controls
+• Multi-factor authentication for internal systems
+• Network segmentation
+• Continuous monitoring and automated alerts
+• Secure development practices
+• Independent audits and assessments
 No system is completely secure, and we cannot guarantee absolute protection.
 
-12. Children-s Information
-ENDA does not knowingly collect personal information from children under the age of 16. If we learn such information has been collected, we will delete it.
+12. Children’s Information
+eNDA does not knowingly collect personal information from children under the age of 16. If we learn such information has been collected, we will delete it.
 
 13. Changes to This Privacy Policy
-We may update this Privacy Policy from time to time.
-Material changes will be communicated through the Services or by email where appropriate.
+We may update this Privacy Policy from time to time. Material changes will be communicated through the Services or by email where appropriate.
 
 14. Contact Us
 For questions, requests, or concerns about this Privacy Policy:
 ENDA Technologies, LLC
-Email: support@ENDAtech.app
+Email: support@eNDAtech.app
 

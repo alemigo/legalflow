@@ -33,8 +33,7 @@ function PagesContent() {
     return (
         <Layout currentPageName={currentPage}>
             <Routes>            
-                 <Route path="/" element={<Navigate to="/enda" replace />} />
-                    <Route path="/enda" element={<Landing />} />
+                <Route path="/" element={<Landing />} />
                 
                 
             </Routes>
