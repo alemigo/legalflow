@@ -185,7 +185,7 @@ export default function Landing() {
             <div className="flex items-center gap-3 rounded">
                   <Button
                     variant="ghost"
-                    onClick={() => (window.location.href = "https://enda.legal-flow.app/dashboard")}
+                    onClick={() => (window.location.href = "https://docs.endatech.app/dashboard")}
                     className="text-slate-700 hover:text-slate-900 font-medium transition-colors"
                   >
                     Dashboard
@@ -218,7 +218,7 @@ export default function Landing() {
                 {/* email input removed */}
                 <Button
                   className="bg-[#FF6B35] hover:bg-[#FF5722] text-white h-12 px-8 rounded-full font-semibold"
-                  onClick={() => (window.location.href = "https://enda.legal-flow.app/getstarted")}
+                  onClick={() => (window.location.href = "https://docs.endatech.app/getstarted")}
                 >
                   Get started for free
                   <ArrowRight className="w-4 h-4 ml-2" />
@@ -807,7 +807,7 @@ export default function Landing() {
                   </ul>
                   <Button
                     disabled={tier.isComingSoon}
-                    onClick={() => (window.location.href = "https://enda.legal-flow.app/getstarted?plan=" + encodeURIComponent(tier.name) + "&term=" + billingPeriod)}
+                    onClick={() => (window.location.href = "https://docs.endatech.app/getstarted?plan=" + encodeURIComponent(tier.name) + "&term=" + billingPeriod)}
                     className={`w-full h-12 ${
                       tier.popular
                         ? 'bg-blue-600 hover:bg-blue-700 text-white'
@@ -829,7 +829,7 @@ export default function Landing() {
             </p>
             <Button variant="outline" className="border-slate-300">
 
-            <a href="mailto:sales@legal-flow.app">Contact Sales</a>
+            <a href="mailto:support@endatech.app">Contact Sales</a>
             </Button>
           </div>
         </div>
@@ -847,7 +847,7 @@ export default function Landing() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               className="bg-[#FF6B35] hover:bg-[#FF5722] text-white h-14 px-8 text-lg rounded-full font-semibold"
-              onClick={() => (window.location.href = "https://enda.legal-flow.app/getstarted")}
+              onClick={() => (window.location.href = "https://docs.endatech.app/getstarted")}
             >
               Start free 
               <ArrowRight className="w-5 h-5 ml-2" />
@@ -931,7 +931,7 @@ export default function Landing() {
               <ul className="space-y-2 text-sm text-slate-400">
                 <li className="flex items-center gap-2">
                   <Mail className="w-4 h-4" />
-                  <a href="mailto:support@legal-flow.app" className="hover:text-white transition-colors">support@legal-flow.app</a>
+                  <a href="mailto:support@endatech.app" className="hover:text-white transition-colors">support@endatech.app</a>
                 </li>
                 {/* <li className="flex items-center gap-2">
                   <Phone className="w-4 h-4" />
@@ -939,23 +939,22 @@ export default function Landing() {
                 </li> */}
               </ul>
               <div className="flex gap-3 mt-4">
-                <a href="#" className="w-8 h-8 bg-slate-800 rounded-full flex items-center justify-center hover:bg-slate-700 transition-colors">
+                {/* <a href="#" className="w-8 h-8 bg-slate-800 rounded-full flex items-center justify-center hover:bg-slate-700 transition-colors">
                   <Twitter className="w-4 h-4" />
                 </a>
                 <a href="#" className="w-8 h-8 bg-slate-800 rounded-full flex items-center justify-center hover:bg-slate-700 transition-colors">
                   <Linkedin className="w-4 h-4" />
-                </a>
+                </a> */}
               </div>
             </div>
           </div>
           <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-slate-400">
-              © 2024 eNDA. All rights reserved.
+              © 2025 eNDA. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm text-slate-400">
-              <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-              <a href="#" className="hover:text-white transition-colors">Cookie Policy</a>
+              <a href="https://endatech.app/privacy.html" className="hover:text-white transition-colors">Privacy Policy</a>
+              <a href="https://endatech.app/terms.html" className="hover:text-white transition-colors">Terms of Service</a>
             </div>
           </div>
         </div>
