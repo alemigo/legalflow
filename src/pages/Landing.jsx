@@ -1,11 +1,9 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { createPageUrl } from "@/utils";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
 import {
   FileText,
   Shield,
@@ -17,24 +15,17 @@ import {
   Sparkles,
   Lock,
   TrendingUp,
-  Clock,
-  DollarSign,
-  MessageSquare,
   Mail,
-  Phone,
-  PlayCircle,
-  Linkedin,
-  Twitter,
   PenTool, // Added PenTool icon
-  User
+  User,
+  Copy
 } from "lucide-react";
 import '../App.css';
 
 export default function Landing() {
   const navigate = useNavigate();
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [user, setUser] = useState(null);
   const [billingPeriod, setBillingPeriod] = useState('monthly');
+  const supportEmail = "support@endatech.app";
 
   const [isVisible, setIsVisible] = useState({});
   const observerRef = useRef(null);
@@ -920,10 +911,10 @@ export default function Landing() {
             <div>
               <h4 className="font-semibold mb-4">Company</h4>
               <ul className="space-y-2 text-sm text-slate-400">
-                <li><a href="#" className="hover:text-white transition-colors">About Us</a></li>
+                {/* <li><a href="#" className="hover:text-white transition-colors">About Us</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Careers</a></li>
-                <li><a href="#contact" className="hover:text-white transition-colors">Contact</a></li>
+                <li><a href="#contact" className="hover:text-white transition-colors">Contact</a></li> */}
               </ul>
             </div>
             <div>
@@ -931,7 +922,52 @@ export default function Landing() {
               <ul className="space-y-2 text-sm text-slate-400">
                 <li className="flex items-center gap-2">
                   <Mail className="w-4 h-4" />
-                  <a href="mailto:support@endatech.app" className="hover:text-white transition-colors">support@endatech.app</a>
+                  <a
+                    href={`mailto:${supportEmail}`}
+                    className="hover:text-white transition-colors"
+                  >
+                    {supportEmail}
+                  </a>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      if (navigator.clipboard && navigator.clipboard.writeText) {
+                        navigator.clipboard.writeText(supportEmail).catch(() => {
+                          const textarea = document.createElement("textarea");
+                          textarea.value = supportEmail;
+                          textarea.setAttribute("readonly", "");
+                          textarea.style.position = "absolute";
+                          textarea.style.left = "-9999px";
+                          document.body.appendChild(textarea);
+                          textarea.select();
+                          try {
+                            document.execCommand("copy");
+                          } catch (e) {
+                            console.error("Failed to copy email", e);
+                          }
+                          document.body.removeChild(textarea);
+                        });
+                      } else {
+                        const textarea = document.createElement("textarea");
+                        textarea.value = supportEmail;
+                        textarea.setAttribute("readonly", "");
+                        textarea.style.position = "absolute";
+                        textarea.style.left = "-9999pxpx";
+                        document.body.appendChild(textarea);
+                        textarea.select();
+                        try {
+                          document.execCommand("copy");
+                        } catch (e) {
+                          console.error("Failed to copy email", e);
+                        }
+                        document.body.removeChild(textarea);
+                      }
+                    }}
+                    className="ml-1 text-slate-400 hover:text-white transition-colors"
+                    aria-label="Copy support email to clipboard"
+                  >
+                    <Copy className="w-4 h-4" />
+                  </button>
                 </li>
                 {/* <li className="flex items-center gap-2">
                   <Phone className="w-4 h-4" />
